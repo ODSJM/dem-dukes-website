@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dem Duke's Tree & Landcare</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <script defer src="scripts.js"></script>
 </head>
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar fixed-top navbar-expand-lg custom-nav">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="images/WebIcon.png" alt="Logo" class="logo-icon me-2" />
+  <nav class="navbar custom-nav">
+    <div class="container nav-container">
+      <a class="navbar-brand" href="#">
+        <img src="images/WebIcon.png" alt="Logo" class="logo-icon" />
         <span>Dem Duke's Tree & Landcare</span>
       </a>
-      <ul class="navbar-nav ms-auto">
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+      <ul class="navbar-nav" id="navbarNav">
         <li class="nav-item"><a href="#banner" class="nav-link">🌳</a></li>
         <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
         <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
@@ -37,7 +37,7 @@
       </div>
       <div class="banner-content">
         <h1>Professional Tree & Landcare Services</h1>
-        <a href="#services" class="btn btn-light">Learn More</a>
+        <a href="#services" class="btn">Learn More</a>
       </div>
     </div>
   </section>
@@ -58,25 +58,23 @@
       <h2 class="text-center mb-5">Our Services</h2>
       <div class="row g-4 justify-content-center">
 
-
         <!-- Example card (repeat for each service) -->
         <div class="col-md-4">
           <div class="service-card" style="background-image: url('images/cutting.jpeg');">
             <div class="service-title">Tree Cutting/Removal</div>
             <div class="service-overlay">
-              <h3>Tree cutting/Removal</h3>
+              <h3>Tree Cutting/Removal</h3>
               <p>We safely and efficiently remove unwanted or hazardous trees using modern equipment and professional techniques, ensuring the safety and cleanliness of your property.</p>
             </div>
           </div>
         </div>
 
-        <!-- Add more cards for each service -->
         <div class="col-md-4">
           <div class="service-card" style="background-image: url('images/clearing.jpg');">
             <div class="service-title">Land Clearing</div>
             <div class="service-overlay">
               <h3>Land Clearing</h3>
-              <p>WWhether you're prepping for construction or reclaiming overgrown space, our land clearing service removes brush, trees, and debris with precision and care.</p>
+              <p>Whether you're prepping for construction or reclaiming overgrown space, our land clearing service removes brush, trees, and debris with precision and care.</p>
             </div>
           </div>
         </div>
@@ -96,13 +94,11 @@
             <div class="service-title">Hedge & Bush Trimming</div>
             <div class="service-overlay">
               <h3>Hedge & Bush Trimming</h3>
-              <p>SWe shape and maintain your hedges and bushes to boost your property’s curb appeal and ensure long-term plant health with clean, sharp trimming.
-</p>
+              <p>We shape and maintain your hedges and bushes to boost your property’s curb appeal and ensure long-term plant health with clean, sharp trimming.</p>
             </div>
           </div>
         </div>
 
-        <!-- Add more cards for each service -->
         <div class="col-md-4">
           <div class="service-card" style="background-image: url('images/lot.jpg');">
             <div class="service-title">Lot Clearing</div>
@@ -115,15 +111,14 @@
 
         <div class="col-md-4">
           <div class="service-card" style="background-image: url('images/asphalt.jpg');">
-            <div class="service-title">Asphalt & Gravel spreading </div>
+            <div class="service-title">Asphalt & Gravel Spreading</div>
             <div class="service-overlay">
-              <h3>Asphalt & Gravel spreading </h3>
+              <h3>Asphalt & Gravel Spreading</h3>
               <p>Create solid and smooth surfaces with our gravel and asphalt spreading service — ideal for driveways, walkways, parking pads, and landscaping foundations.</p>
             </div>
           </div>
         </div>
 
-        <!-- Add trim bushes, lot cleaning, gravel & asphalt -->
       </div>
     </div>
   </section>
@@ -141,7 +136,6 @@
                 marginheight="0" 
                 marginwidth="0">Loading…
         </iframe>
-
     </div>
   </section>
 
@@ -152,11 +146,11 @@
       <div class="accordion" id="faqAccordion">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+            <button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseOne">
               What areas do you service?
             </button>
           </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div id="collapseOne" class="accordion-collapse collapse show" data-parent="#faqAccordion">
             <div class="accordion-body">We service residential and commercial areas across [Your Region].</div>
           </div>
         </div>
@@ -164,6 +158,15 @@
       </div>
     </div>
   </section>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("navbarNav");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+  </script>
 
 </body>
 </html>
